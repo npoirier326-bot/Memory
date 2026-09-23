@@ -1,138 +1,66 @@
-:root {
-  --fond: #0A0E27;
-  --accent: #E3243B;
-  --bleu: #1E3A5F;
-  --support: #F5F5F0;
-  --radius: 4px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
-  min-height: 100vh;
-  background: var(--fond);
-  background-image:
-    linear-gradient(135deg, transparent 0%, transparent 48%, rgba(227, 36, 59, 0.08) 48%, rgba(227, 36, 59, 0.08) 52%, transparent 52%, transparent 100%);
-  color: var(--support);
-  font-family: "Arial Narrow", "Helvetica Neue", sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 1rem;
+  background-color: #0A0E27;
+  color: #F5F5F0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 2rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
 header {
-  text-align: center;
+  background-color: #E3243B;
+  color: #0A0E27;
+  padding: 1rem;
   margin-bottom: 2rem;
-  position: relative;
-  padding: 1rem 3rem;
-  background: var(--accent);
-  clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
 }
 
 header h1 {
-  margin: 0 0 0.5rem;
+  margin: 0 0 10px;
   font-size: 2rem;
   font-style: italic;
-  font-weight: 900;
-  color: var(--fond);
-  letter-spacing: 0.08em;
 }
 
 #stats {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  font-size: 1rem;
   font-weight: bold;
-  font-variant-numeric: tabular-nums;
-  color: var(--fond);
 }
 
 #game-board {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.6rem;
+  gap: 10px;
   max-width: 600px;
-  width: 100%;
+  margin: 0 auto;
 }
 
 .card {
   aspect-ratio: 1 / 1;
-  background: var(--bleu);
-  border: 2px solid var(--accent);
-  clip-path: polygon(12% 0, 100% 0, 100% 88%, 88% 100%, 0 100%, 0 12%);
+  background-color: #1E3A5F;
+  border: 2px solid #E3243B;
   cursor: pointer;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  transition: border-color 0.15s ease, background-color 0.15s ease;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    45deg,
-    rgba(227, 36, 59, 0.15),
-    rgba(227, 36, 59, 0.15) 2px,
-    transparent 2px,
-    transparent 10px
-  );
 }
 
 .card:hover {
-  border-color: var(--support);
-  background: #274d78;
+  background-color: #274d78;
 }
 
 .card:focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 3px;
+  outline: 3px solid #E3243B;
 }
 
 .card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: relative;
-  z-index: 1;
 }
 
 .card.matched {
-  cursor: default;
   opacity: 0.5;
-  border-color: var(--support);
 }
 
 #result {
   margin-top: 2rem;
   font-size: 1.3rem;
   font-weight: bold;
-  font-style: italic;
-  text-align: center;
-  min-height: 1.5rem;
-  color: var(--accent);
-}
-
-@media (max-width: 500px) {
-  #game-board {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.4rem;
-  }
-
-  header h1 {
-    font-size: 1.4rem;
-  }
+  color: #E3243B;
 }
