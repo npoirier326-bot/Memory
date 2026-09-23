@@ -3,9 +3,10 @@ const imgStart = Math.floor(Math.random() * 100) + 1;
 const nom = "Nolan";
 console.log(`Bonjour ${nom} !`);
 const images = [];
+const tableauDeJeu = document.getElementById('game-board');
 
 for (let i = 0; i < 8; i++) {
-  const url = 'https://picsum.photos/${dimension}?random=${imgStart + i}';
+  const url = `https://picsum.photos/${dimension}?random=${imgStart + i}`;
   images.push(url);
 }
 
@@ -17,4 +18,19 @@ function shuffle(array){
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
+
+function initGame(){
+    shuffle(cards);
+    cards.forEach((imgUrl) => {
+      const card = document.createElement('div');
+        card.classList.add('card');
+        card.dataset.value = imgUrl;
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        tableauDeJeu.appendChild(card);
+    })
+}
+
+initGame();
+
 
