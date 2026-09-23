@@ -5,9 +5,11 @@ console.log(`Bonjour ${nom} !`);
 const images = [];
 
 for (let i = 0; i < 8; i++) {
-  const url = `https://picsum.photos/${dimension}?random=${imgStart + i}`;
+  const url = 'https://picsum.photos/${dimension}?random=${imgStart + i}';
   images.push(url);
 }
+
+let cards = [...images, ...images];
 
 function shuffle(array){
     for (let i = array.length - 1; i > 0; i--) {
