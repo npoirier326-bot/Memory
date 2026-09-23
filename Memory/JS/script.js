@@ -4,6 +4,11 @@ const nom = "Nolan";
 console.log(`Bonjour ${nom} !`);
 const images = [];
 const tableauDeJeu = document.getElementById('game-board');
+let firstCard = null;
+let secondCard = null;
+let lockBoard = false;
+let moves= 0;
+let matchedCount = 0;
 
 for (let i = 0; i < 8; i++) {
   const url = `https://picsum.photos/${dimension}?random=${imgStart + i}`;
@@ -28,7 +33,12 @@ function initGame(){
         card.setAttribute('role', 'button');
         card.setAttribute('tabindex', '0');
         tableauDeJeu.appendChild(card);
+        card.addEventListener('click', () => handleCardClick(card))
     })
+}
+
+function handleCardClick(card){
+    
 }
 
 initGame();
